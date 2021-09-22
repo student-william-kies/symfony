@@ -1,0 +1,23 @@
+.home_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("https://c1.wallpaperflare.com/preview/33/782/541/blue-minimalistic-mountains-nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.all_posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.home_content h1, .all_posts h1{
+    font-size: 78px;
+    font-family: 'Lobster', cursive;
+}

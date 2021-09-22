@@ -4,13 +4,62 @@
         <meta charset="UTF-8">
         <title>{% block title %}TheBlog{% endblock %}</title>
         {% block style %}
+            <!-- Bootstrap 5 CDN -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+            <!-- Font Awesome CDN -->
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+            <!-- Custom CSS -->
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         {% endblock %}
 
         {% block js %}
+            <!-- Bootstrap 5 JS Bundle -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><img src="https://www.pngkit.com/png/full/246-2464462_blog-blog-png.png" alt="Blog" width="30" height="30"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link" href="#">Blog</a>
+                            {% if app.user %}
+                                <a class="nav-link" href="#">Publier</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="nav-link" href="#">Admin</a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <form class="d-flex">
+                        {% if app.user %}
+                            <a href="/profil" class="btn btn-primary"><i class="fas fa-user-circle"></i></a>
+                            <a href="{{ path('app_logout') }}" class="btn btn-danger"><i class="fas fa-power-off"></i></a>
+                            {% else %}
+                                <a href="/user_register" class="btn btn-warning">Sign Up</a>
+                                <a href="/user_connect" class="btn btn-outline-secondary">Sign In</a>
+                        {% endif %}
+                    </form>
+                </div>
+            </nav>
+        </header>
+
         {% block body %}
         {% endblock %}
+
+        <div class="my-5">
+            <footer class="text-center text-lg-start">
+                <!-- Copyright -->
+                <div class="text-center text-white p-3">
+                    <p class="text-dark">© Copyright William Kies</p>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
