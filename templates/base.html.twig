@@ -27,9 +27,9 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="/blog">Blog</a>
                             {% if app.user %}
-                                <a class="nav-link" href="#">Publier</a>
+                                <a class="nav-link" href="/create_article">Publier</a>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="nav-link" href="#">Admin</a>
