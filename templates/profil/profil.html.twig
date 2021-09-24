@@ -19,6 +19,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Login/Mot de Passe</h5>
                     <p class="card-text">
+                        {{ form_start(updateForm) }}
+                        {{ form_row(updateForm.login) }}
+                        {{ form_row(updateForm.password, {
+                            label: 'Password'
+                        }) }}
+
+                        <button type="submit" class="btn">update</button>
+                        {{ form_end(updateForm) }}
                     </p>
                 </div>
             </div>
