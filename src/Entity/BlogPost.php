@@ -23,7 +23,7 @@ class BlogPost
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=5000)
      */
     private $content;
 

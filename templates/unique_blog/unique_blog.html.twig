@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}The Blog - {{ post.title }}{% endblock %}
+
+{% block style %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/unique-blog.css') }}">
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid unique-blog">
+        <img src="{{ post.picture }}" class="rounded mx-auto d-block img-thumbnail" height="500" width="500" alt="UniquePost">
+        <small class="text-muted">Créer le {{ post.createdAt | date('d-m-Y') }}</small>
+        <div>
+            <h1 class="display-1">{{ post.title }}</h1>
+        </div>
+        <div class="post-content">
+            <p class="lead">
+                {{ post.content }}
+            </p>
+            <a href="/blog" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
+{% endblock %}

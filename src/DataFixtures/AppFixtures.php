@@ -15,7 +15,7 @@ class AppFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         $users = array();
 
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 0; $i < mt_rand(3, 6); $i++)
         {
             $users[$i] = new User();
             $users[$i] -> setLogin($faker -> name);
@@ -25,13 +25,14 @@ class AppFixtures extends Fixture
         }
 
         $posts = array();
-        for ($i = 0; $i < 20; $i++)
+
+        for ($i = 0; $i < mt_rand(3, 12); $i++)
         {
             $posts[$i] = new BlogPost();
-            $posts[$i] -> setTitle($faker -> title);
-            $posts[$i] -> setContent($faker -> paragraph);
-            $posts[$i] -> setPicture($faker -> imageUrl);
-            $posts[$i] -> setCreatedAt($faker -> dateTime);
+            $posts[$i] -> setTitle($faker -> jobTitle);
+            $posts[$i] -> setContent($faker -> realText);
+            $posts[$i] -> setPicture($faker -> imageUrl());
+            $posts[$i] -> setCreatedAt($faker -> dateTimeBetween('-6 months'));
 
             $manager -> persist($posts[$i]);
         }

@@ -1,0 +1,13 @@
+.unique-blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.post-content{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto 0 auto;
+}

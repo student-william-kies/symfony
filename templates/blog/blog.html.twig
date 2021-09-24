@@ -3,5 +3,21 @@
 {% block title %}TheBlog - Tout les articles{% endblock %}
 
 {% block body %}
-
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for allPosts in posts %}
+            <div class="col">
+                <div class="card">
+                    <img src="{{ allPosts.picture }}" class="card-img-top" alt="BlogPicture">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ allPosts.title }}</h5>
+                        <p class="card-text text-muted">{{ allPosts.content }}</p>
+                        <a href="/blog/{{ allPosts.id }}" class="btn btn-primary">See More</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Créer le {{ allPosts.createdAt | date('d-m-Y') }}</small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
