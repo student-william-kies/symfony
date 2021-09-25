@@ -11,13 +11,15 @@
     {{ parent() }}
 {% endblock %}
 
+{% form_theme updateForm 'bootstrap_5_layout.html.twig' %}
+
 {% block body %}
     <div class="container-fluid profil">
         <div class="card-group">
             <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Vos Informations</div>
+                <div class="card-header">Informations Personnelles</div>
                 <div class="card-body">
-                    <h5 class="card-title">Login/Mot de Passe</h5>
+                    <h5 class="card-title">Modifications</h5>
                     <p class="card-text">
                         {{ form_start(updateForm) }}
                         {{ form_row(updateForm.login) }}
@@ -25,7 +27,7 @@
                             label: 'Password'
                         }) }}
 
-                        <button type="submit" class="btn">update</button>
+                        <button type="submit" class="btn btn-dark">update</button>
                         {{ form_end(updateForm) }}
                     </p>
                 </div>

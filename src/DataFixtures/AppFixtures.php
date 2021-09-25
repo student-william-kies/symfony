@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
             $posts[$i] -> setTitle($faker -> jobTitle);
             $posts[$i] -> setContent($faker -> realText);
             $posts[$i] -> setPicture($faker -> imageUrl());
-            $posts[$i] -> setCreatedAt($faker -> dateTimeBetween('-6 months'));
+            $posts[$i] -> setCreatedAt($faker -> dateTimeBetween('-3 months'));
 
             $manager -> persist($posts[$i]);
         }

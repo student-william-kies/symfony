@@ -10,6 +10,7 @@
 {% block body %}
     <div class="home_content">
         <h1 class="text-center">TheBlog</h1>
+        <p class="text-center">{% if app.user %} Bonjour {{ app.user.login }} {% endif %}</p>
     </div>
 
     <div class="all_posts">
@@ -18,7 +19,7 @@
             <div class="card-group">
             {% for posts in lastPosts %}
                 <div class="card">
-                    <img src="{{ posts.picture }}" class="card-img-top" alt="PostPicture">
+                    <img src="{{ posts.picture }}" class="card-img-top" height="300" width="200" alt="PostPicture">
                     <div class="card-body">
                         <h5 class="card-title">{{ posts.title }}</h5>
                         <p class="card-text">

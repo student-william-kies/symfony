@@ -1,0 +1,8 @@
+.creating-blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(210, 210, 210, 0.73);
+    text-align: center;
+}

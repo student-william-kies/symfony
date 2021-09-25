@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheBlog - Créer votre blog{% endblock %}
+
+{% block style %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/creating_blog.css') }}">
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+
+{% form_theme postForm 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+    <div class="container creating-blog">
+        <h1>Créer votre blog</h1>
+        {{ form_start(postForm) }}
+            <div class="mb-3">
+                {{ form_row(postForm.title) }}
+            </div>
+            <div class="mb-3">
+                {{ form_row(postForm.content) }}
+            </div>
+            <div class="mb-3">
+                {{ form_row(postForm.picture) }}
+            </div>
+
+        <button type="submit" class="btn btn-primary">Créer le blog</button>
+        {{ form_end(postForm) }}
+    </div>
+{% endblock %}

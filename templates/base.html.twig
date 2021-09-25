@@ -10,6 +10,7 @@
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
             <!-- Custom CSS -->
             <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+            <link rel="icon" href="https://www.pngkit.com/png/full/246-2464462_blog-blog-png.png">
         {% endblock %}
 
         {% block js %}
@@ -29,7 +30,7 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                             <a class="nav-link" href="/blog">Blog</a>
                             {% if app.user %}
-                                <a class="nav-link" href="/create_article">Publier</a>
+                                <a class="nav-link" href="/creating_blog">Publier</a>
                             {% endif %}
                         </div>
                     </div>
